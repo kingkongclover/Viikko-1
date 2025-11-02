@@ -30,7 +30,7 @@
 @media (min-width: 600px) {
     .wiki-content {
         display: flex;
-        flex-direction: row;
+        flex-direction: row-reverse;
     }
 
     .img-container {

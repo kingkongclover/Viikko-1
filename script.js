@@ -1,3 +1,5 @@
+// Dog breeds with their wikiname to get right results from wikimedia API
+
 const dogBreeds = [
     { name: 'Beagle', wikiName: 'Beagle'},
     { name: 'Boxer', wikiName: 'Boxer_(dog_breed)'},
@@ -7,12 +9,24 @@ const dogBreeds = [
 ];
 
 async function fetchImage(dogBreeds) {
+
+    // Selecting body element and appending container div in it with js
+    const body = document.querySelector('body')
+
+    const container = document.createElement('div');
+    container.setAttribute("class", "container")
+
+    body.appendChild(container);
+
+
     console.log("Script starts working");
     console.log(dogBreeds);
 
+    // Emptying class container div when loading the site
     const containerDiv = document.querySelector('.container')
     containerDiv.innerHTML = '';
 
+    // Looping dog breeds trought the list
     for (const dogBreed of dogBreeds) {
         const dogApi = `https://dog.ceo/api/breed/${dogBreed.name.toLowerCase()}/images/random`
         const dogInfoApi = `https://en.wikipedia.org/api/rest_v1/page/summary/${dogBreed.wikiName.toLowerCase()}`
