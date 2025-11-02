@@ -53,3 +53,7 @@ async function fetchImage(dogBreeds) {
         containerDiv.appendChild(row)
     }
 }
+
+window.addEventListener('DOMContentLoaded', () => {
+  fetchImage(dogBreeds);
+});
